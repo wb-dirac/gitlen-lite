@@ -178,3 +178,38 @@ Gitlen Lite is a lightweight alternative to GitLens focused on core blame functi
 | Setup | Simple | Complex |
 
 Choose Gitlen Lite if you want essential blame functionality with minimal performance impact.
+
+## 项目状态
+
+### ✅ 已完成的功能
+- **核心blame功能**: 只在光标所在行显示blame信息
+- **实时更新**: 光标移动时立即切换显示
+- **详细信息**: 包含作者、时间和commit message
+- **交互功能**: Copy Hash、Diff比较等hover按钮
+- **性能优化**: 缓存、debounce、懒加载
+- **配置选项**: 日期格式、文件大小限制等
+- **完整文档**: README、配置说明等
+
+### 📁 项目结构
+```
+gitlen-lite/
+├── src/
+│   ├── extension.ts           # 主入口
+│   ├── gitBlameProvider.ts    # Git操作
+│   ├── blameDecorationManager.ts # UI装饰
+│   ├── hoverProvider.ts       # Hover卡片
+│   └── diffProvider.ts        # Diff比较
+├── openspec/                  # 规格文档
+├── README.md                  # 使用说明
+├── package.json              # 依赖配置
+└── tsconfig.json             # TypeScript配置
+```
+
+## 下一步
+
+现在你可以：
+1. **继续开发**: 添加更多功能或修复bug
+2. **发布扩展**: 打包成VSIX文件发布到市场
+3. **分享项目**: 推送到GitHub等代码托管平台
+
+项目已经是一个完整可用的VS Code扩展了！🎉
