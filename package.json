@@ -1,0 +1,116 @@
+{
+  "name": "gitlen-lite",
+  "displayName": "Gitlen Lite",
+  "description": "A lightweight GitLens clone with inline blame functionality",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "activationEvents": [
+    "onCommand:gitlen-lite.toggleBlame",
+    "onCommand:gitlen-lite.refreshBlame",
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:python",
+    "onLanguage:java",
+    "onLanguage:go",
+    "onLanguage:rust",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:csharp",
+    "onLanguage:php",
+    "onLanguage:ruby",
+    "onLanguage:swift",
+    "onLanguage:kotlin",
+    "onLanguage:scala",
+    "onLanguage:shell",
+    "onLanguage:yaml",
+    "onLanguage:json",
+    "onLanguage:markdown",
+    "onLanguage:html",
+    "onLanguage:css",
+    "onLanguage:vue",
+    "onLanguage:svelte",
+    "onFile:*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitlen-lite.toggleBlame",
+        "title": "Toggle Blame",
+        "category": "Gitlen Lite"
+      },
+      {
+        "command": "gitlen-lite.refreshBlame",
+        "title": "Refresh Blame",
+        "category": "Gitlen Lite"
+      },
+      {
+        "command": "gitlen-lite.copyHash",
+        "title": "Copy Commit Hash",
+        "category": "Gitlen Lite"
+      },
+      {
+        "command": "gitlen-lite.compareWithPrevious",
+        "title": "Compare with Previous",
+        "category": "Gitlen Lite"
+      },
+      {
+        "command": "gitlen-lite.debug",
+        "title": "Debug Info",
+        "category": "Gitlen Lite"
+      }
+    ],
+    "configuration": {
+      "title": "Gitlen Lite",
+      "properties": {
+        "gitlen-lite.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable inline blame annotations"
+        },
+        "gitlen-lite.dateFormat": {
+          "type": "string",
+          "default": "relative",
+          "enum": ["relative", "absolute", "iso"],
+          "description": "Date format for blame annotations"
+        },
+        "gitlen-lite.maxFileSize": {
+          "type": "number",
+          "default": 5000,
+          "description": "Maximum file size (lines) for automatic blame"
+        },
+        "gitlen-lite.cacheEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable blame data caching"
+        },
+        "gitlen-lite.debounceDelay": {
+          "type": "number",
+          "default": 500,
+          "description": "Debounce delay (ms) for blame updates"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@types/mocha": "^10.0.1",
+    "typescript": "^4.9.4",
+    "vscode-test": "^1.6.1"
+  },
+  "dependencies": {
+    "simple-git": "^3.17.0"
+  }
+}
